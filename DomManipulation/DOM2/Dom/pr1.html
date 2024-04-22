@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Range Sum Calculator</title>
+<style>
+  /* CSS for better visualization */
+  #max-sum-holder, #range-a-holder, #range-b-holder, #sum {
+    margin-bottom: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div id="max-sum-holder">
+  <label for="max-sum">Max Sum:</label>
+  <input type="number" id="max-sum" value="50" min="0">
+</div>
+
+<div id="range-a-holder">
+  <label for="range-a">Range A:</label>
+  <input type="range" id="range-a" value="0" min="0" max="0">
+  <span id="range-a-value">0</span>
+</div>
+
+<div id="range-b-holder">
+  <label for="range-b">Range B:</label>
+  <input type="range" id="range-b" value="50" min="0" max="50">
+  <span id="range-b-value">50</span>
+</div>
+
+<div id="sum"></div>
+
+<script>
+  // Get the necessary elements
+  const maxSumInput = document.getElementById("max-sum");
+  const rangeAInput = document.getElementById("range-a");
+  const rangeBInput = document.getElementById("range-b");
+  const sumDiv = document.getElementById("sum");
+  
+  // Update the sum and range inputs' attributes
+  function updateSumAndRanges() {
+    const maxSum = parseInt(maxSumInput.value);
+    const rangeBValue = parseInt(rangeBInput.value);
+    const rangeAValue = Math.min(maxSum - rangeBValue, parseInt(rangeAInput.value));
+    
+    rangeAInput.max = rangeBValue;
+    rangeAInput.value = rangeAValue;
+    document.getElementById("range-a-value").textContent = rangeAValue;
+    
+    const sum = rangeAValue + rangeBValue;
+    sumDiv.textContent = "Sum: " + sum;
+  }
+
+  // Add event listeners to update the sum and ranges when any input changes
+  maxSumInput.addEventListener("input", updateSumAndRanges);
+  rangeAInput.addEventListener("input", updateSumAndRanges);
+  rangeBInput.addEventListener("input", updateSumAndRanges);
+
+  // Initialize the sum and ranges on page load
+  updateSumAndRanges();
+</script>
+
+</body>
+</html>

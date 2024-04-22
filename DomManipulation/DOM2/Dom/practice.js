@@ -19,12 +19,10 @@
 
 // }
 
-
 // function createMediumCircle () {
 //     const divNode =  document.createElement('div'); // creating node 
 //     divNode.classList.add('circle'); // this is how you can add classname in dynamic css
 //     divNode.classList.add('medium');
-
 // 	bigCircleNode.appendChild(mediumCicrleNode)
 //     return divNode
 // }
