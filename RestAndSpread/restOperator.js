@@ -32,3 +32,12 @@ console.log(array);
 const array2 = ['hi','hello','hey','kemchho'];
 console.log(...array2);
 console.log(array2);
+
+
+//rest operator....
+console.log("call me function executed");
+// function callme(a,b,...c){
+	// console.log(a,b,...c);
+// }
+// const arr = ["baby","beta","betuMuzaffar","myson"];
+// callme(...arr);
